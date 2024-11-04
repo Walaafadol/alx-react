@@ -1,4 +1,4 @@
-:root {
+root {
   --color-brand: #e01d3f;
 }
 
@@ -13,17 +13,6 @@
 .App-header img {
   width: 200px;
 }
-
-.App-body {
-  margin: 50px;
-}
-
-.App-footer {
-  border-top: 3px solid var(--color-brand);
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  bottom: 0;
-  font-style: italic;
-}
+.App-header h1 {
+ color: var(--color-brand);
+ }
