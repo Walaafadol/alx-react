@@ -2,9 +2,13 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 const CourseListRow = ({ isHeader, textFirstCell, textSecondCell }) => {
+  const bgColor1 = { backgroundColor: '#f5f5f5ab' };
+  const bgColor2 = { backgroundColor: '#deb5b545' };
+  let bgColor = undefined;
   let tr = undefined;
 
   if (isHeader === true) {
+	  bgColor = bgColor2;
     if (textSecondCell === null) {
       tr = <th colSpan='2'>{textFirstCell}</th>;
     } else {
@@ -17,6 +21,7 @@ const CourseListRow = ({ isHeader, textFirstCell, textSecondCell }) => {
     }
   }
   if (isHeader === false) {
+	  bgColor = bgColor1;
     tr = (
       <Fragment>
         <td>{textFirstCell}</td>
@@ -25,7 +30,7 @@ const CourseListRow = ({ isHeader, textFirstCell, textSecondCell }) => {
     );
   }
 
-  return <tr>{tr}</tr>;
+  return <tr style={bgColor}>{tr}</tr>;
 };
 
 CourseListRow.defaultProps = {
