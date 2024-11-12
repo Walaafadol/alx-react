@@ -3,6 +3,12 @@ import React from 'react';
 import App from './App';
 
 describe('<App />', () => {
+  beforeAll(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+  });
+  afterAll(() => {
+    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+  });
   it('renders without crashing', () => {
     const wrapper = shallow(<App />);
   });

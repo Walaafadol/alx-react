@@ -3,6 +3,12 @@ import { shallow } from 'enzyme';
 import CourseList from './CourseList';
 
 describe('<CourseList />', () => {
+	 beforeAll(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+  });
+  afterAll(() => {
+    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+  });
   const wrapper = shallow(<CourseList />);
   it('renders without crashing', () => {
     expect(wrapper.exists());

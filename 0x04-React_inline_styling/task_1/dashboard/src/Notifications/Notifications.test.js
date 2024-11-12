@@ -4,6 +4,12 @@ import Notifications from './Notifications';
 import { getLatestNotification } from '../utils/utils';
 
 describe('<Notification />', () => {
+  beforeAll(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+  });
+  afterAll(() => {
+    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+  });
   it('renders without crashing', () => {
     const wrapper = shallow(<Notifications />);
     shallow(<Notifications />);
