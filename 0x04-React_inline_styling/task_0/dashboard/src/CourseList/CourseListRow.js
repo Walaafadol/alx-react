@@ -5,14 +5,14 @@ const CourseListRow = ({ isHeader, textFirstCell, textSecondCell }) => {
   const bgColor1 = { backgroundColor: '#f5f5f5ab' };
   const bgColor2 = { backgroundColor: '#deb5b545' };
   let bgColor = undefined;
-  let tr = undefined;
+  let content = undefined;
 
   if (isHeader === true) {
-	  bgColor = bgColor2;
+    bgColor = bgColor2;
     if (textSecondCell === null) {
-      tr = <th colSpan='2'>{textFirstCell}</th>;
+      content = <th colSpan='2'>{textFirstCell}</th>;
     } else {
-      tr = (
+      content = (
         <Fragment>
           <th>{textFirstCell}</th>
           <th>{textSecondCell}</th>
@@ -21,8 +21,8 @@ const CourseListRow = ({ isHeader, textFirstCell, textSecondCell }) => {
     }
   }
   if (isHeader === false) {
-	  bgColor = bgColor1;
-    tr = (
+    bgColor = bgColor1;
+    content = (
       <Fragment>
         <td>{textFirstCell}</td>
         <td>{textSecondCell}</td>
@@ -30,7 +30,7 @@ const CourseListRow = ({ isHeader, textFirstCell, textSecondCell }) => {
     );
   }
 
-  return <tr style={bgColor}>{tr}</tr>;
+  return <tr style={bgColor}>{content}</tr>;
 };
 
 CourseListRow.defaultProps = {

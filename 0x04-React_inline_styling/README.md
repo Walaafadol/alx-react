@@ -1,22 +1,16 @@
-## 0x03. React component
+## React inline styling
 ### Learning Objectives
-- When to use a Class or a function to create a component
-- The lifecycle of a Class component
-- How to test a component
-- How to utilize a Jest spy to verify that a function is being called correctly
-- What an HOC is and how to use it
-- How to optimize performance and control which components to rend
 
-Task lists
+- the differences between using a CSS file and inline styling
+- how to use a CSS-in-JS tool like Aphrodite
+- how to use conditions within JS to apply different styles
+- how to use responsive design and make the application show a different UI according to the screen size
+- how to create small animations within the app
 
-0. Commence with class components
-1. Lifecycles
-2. Handling Events
-3. Reusable comments & specialization
-4. Specialization
-5. Use the new components
-6. Test the new components
-7. Create WithLogging HOC
-8. Write a test for the HOC
-9. Declare a pure component
-10. Make your own pure component
+Tasks list
+
+ 0. Inline styling
+ 1. install Aphrodite
+ 2. Conditionally applying style
+ 3. Responsive design
+ 4. Animation
