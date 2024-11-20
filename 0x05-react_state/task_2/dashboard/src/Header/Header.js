@@ -1,30 +1,48 @@
-import React from 'react';
-import logo from '../assets/holberton-logo.jpg';
-import { StyleSheet, css } from 'aphrodite';
+import React, { useContext } from "react";
+import logo from "../assets/holberton-logo.jpg";
+import { StyleSheet, css } from "aphrodite";
+import { AppContext } from "../App/AppContext";
 
 function Header() {
+  const { user, logOut } = useContext(AppContext);
+
   return (
-    <header className={css(styles.header)}>
-      <img className={css(styles.logo)} src={logo} alt='logo' />
-      <h1 className={css(styles.title)}>School dashboard</h1>
-    </header>
+    <>
+      <div className={css(styles["App-header"])}>
+        <img src={logo} className={css(styles.img)} alt="logo" />
+        <h1>School dashboard</h1>
+      </div>
+
+      {user.isLoggedIn && (
+        <section className={css(styles.greeting)} id="logoutSection">
+          Welcome<strong> {user.email} </strong>
+          <em>
+            <a href="#" onClick={logOut}>
+              (logout)
+            </a>
+          </em>
+        </section>
+      )}
+    </>
   );
 }
 
 const styles = StyleSheet.create({
-  header: {
-    display: 'flex',
-    color: '#e0344a',
-    alignItems: 'center',
-    borderBottom: 'thick solid #e0344a',
-    width: '100%',
-    position: 'fixed',
+  "App-header": {
+    fontSize: "1.4rem",
+    color: "#e0354b",
+    display: "flex",
+    alignItems: "center",
+    borderBottom: "3px solid #e0354b",
   },
-  logo: {
-    width: '144px',
+
+  img: {
+    width: "200px",
+    height: "200px",
   },
-  title: {
-    margin: 0,
+
+  greeting: {
+    marginTop: "1rem",
   },
 });
 
